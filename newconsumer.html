@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>食譜</title>
+   <script src="HTTP2019.js"></script>
+    <script>
+        var a;
+        var obj = JSON.parse('{"name": "", "telecom":0, "gender":"", "birthDate":""}');
+
+        function myFunction() {
+            var a, b, c, d;
+            obj.name = document.getElementById("name").value;
+            obj.telecom = document.getElementById("phone").value;
+            if (document.getElementById("male").checked == true) {
+                obj.gender = "male";
+            }
+            if (document.getElementById("female").checked == true) {
+                obj.gender = "female";
+            }
+            obj.birthDate = document.getElementById("birth").value;
+            var myJSONstr = JSON.stringify(obj);
+            //alert(myJSONstr);
+            //var encodedData = btoa(myJSONstr);
+            HTTPPostData("http://203.64.84.113/JSON/Post.aspx?id=data001", myJSONstr);
+        }
+    </script>
+</head>
+<body>
+        <center>
+            <h1>Food Recipe</h1>
+            <body background="mothersday2.jpg">
+            </body>
+            <font color="white"><h2>Mother's Day Recipes!</h2></font>
+            <font color="white">
+                Treat your mom on her special day with favorite recipes for pancakes,
+                frittata, cinnamon rolls, waffles and more from Food Network.
+            </font>
+            <font color="white"><h2>Blueberry Pancakes</h2></font>
+            <font color="white">
+                <h4>
+                    Level:Easy &nbsp;&nbsp;&nbsp;&nbsp; Prep:15min &nbsp;&nbsp;&nbsp;&nbsp; Yield:4 to 6<br>
+                    Total:30min&nbsp;&nbsp;&nbsp;&nbsp;Cook:15min&nbsp;&nbsp;&nbsp;&nbsp;
+                </h4>
+            </font>
+            <img src="1483737205050.jpeg" width="50%"><br>
+            <font color="white"><h3>DIRECTIONS:</h3></font>
+            <video tyle="float: right;" width="320" height="240" controls>
+                <source src="video1.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/ogg">
+            </video>
+            <font color="white">
+                <h3>1</h3>
+                Sift the flour, sugar, baking powder, <br>
+                baking soda and salt into a large mixing bowl.<br>
+                In a separate large bowl, lightly whisk the eggs.<br>
+                Add the milk, sour cream,<br>
+                half the melted butter and the vanilla, whisking to blend.<br>
+                Make a well in the dry ingredients and pour the egg mixture into it.<br>
+                Whisk the ingredients together just until blended.<br>
+                Fold the blueberries and lemon zest into the batter. <br>
+                <h3>2</h3>
+                Heat a large skillet or griddle over medium heat <br>
+                and coat with some of the remaining melted butter.<br>
+                For each pancake, pour about 1/4 cup of the batter into the hot skillet.<br>
+                Cook 3 or 4 pancakes at a time, depending on the size of the skillet. <br>
+                If the batter seems too thick, thin it with 1 to 2 tablespoons milk. <br>
+                When bubbles begin to form and "pop" on the pancake's surface, <br>
+                after about 1 minute, and the outer edge looks done,<br>
+                flip it over and cook briefly for about 30 seconds on the other side.<br>
+                &nbsp;<br>
+                <font color="white"><h2>2 Tarte Flambe with Softly Scrambled Eggs and Goat Cheese</h2></font>
+                <font color="yellow">
+                    <I>
+                        "I turned a traditional French tart into more of a pizza, <br>
+                        which works really well for brunch," says Bobby.<br>
+                    </I>
+                </font>
+                <font color="white">
+                    <h4>
+                        Level:Easy &nbsp;&nbsp;&nbsp;&nbsp;Prep:15min&nbsp;&nbsp;&nbsp;&nbsp;Yield:6 servings</br>
+                        Total:1 hr 45 min&nbsp;&nbsp;&nbsp;&nbsp;Inactive:30min&nbsp;&nbsp;&nbsp;&nbsp;Cook:1hr<br>
+                    </h4>
+                </font>
+                <img src="pic2.jpeg" width="50%"><br>
+                <font color="white"><h3>DIRECTIONS:</h3></font>
+                <font color="white">
+                    <h3>1</h3>
+                    Whisk together the creme fraiche, parsley, chives and tarragon in a bowl;<br>
+                    season with salt and pepper. Cover and refrigerate for 30 minutes.
+                    <h3>2</h3>
+                    Preheat the oven to 400 degrees F. Divide the dough in half. <br>
+                    Roll each piece into a very thin 10-by-12-inch rectangle. <br>
+                    Brush with canola oil, place on baking sheets and bake until lightly golden brown, about 10 minutes.
+                    <h3>3</h3>
+                    Heat 1 tablespoon of the oil and 1 tablespoon of the butter in a small saute pan over medium heat.<br>
+                    Add the onion and sugar and cook slowly, stirring occasionally, until caramelized, about 30 minutes. <br>
+                    Season with salt and pepper.
+                    <h3>4</h3>
+                    Heat the remaining 1 tablespoon oil in a medium saute pan over medium heat. <br>
+                    Add the bacon and cook until golden brown and crisp, about 10 minutes. <br>
+                    Remove with a slotted spoon to a plate lined with paper towels.
+                    <h3>5</h3>
+                    Divide the creme fraiche between the pizzas, spreading it out. <br>
+                    Divide the cheddar on top and then add the onion and bacon. <br>
+                    Bake until the cheese has melted, about 5 minutes.
+                    <h3>6</h3>
+                    Meanwhile, heat the remaining 3 tablespoons butter in a medium nonstick saute pan over medium heat. <br>
+                    Add the Fresno chile and cook until soft, about 2 minutes. Whisk the eggs in a bowl until smooth; <br>
+                    season with salt and pepper. Pour the eggs into the pan and stir constantly with a rubber spatula until soft curds form. Add the goat cheese.
+                    <h3>7</h3>
+                    Divide the scrambled eggs between the two pizzas and garnish with more herbs.<br>
+                    &nbsp;<br>
+
+                </font>
+                <fieldset>
+                    <legend>Your data</legend>
+                    Name:<br />
+                    <input type="text" id="name" name="姓名" value="" />
+                    <br />
+                    Gender:<br />
+                    <input type="radio" name="gender" value="male" id="male" />
+                    Male<br />
+                    <input type="radio" name="gender" value="female" id="female" />
+                    Female<br />
+                    Telephone number:<br />
+                    <input type="text" id="phone" name="電話" value="" />
+                    <br />
+                    Birthday(Example:1974-12-25):<br />
+                    <input type="text" name="生日" id="birth" />
+                    <br />
+                </fieldset>
+                <br />
+                <br />
+
+
+                <button onclick="myFunction()">savePatientData</button>
+
+</body>
+</html>
